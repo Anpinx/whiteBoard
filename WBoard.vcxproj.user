@@ -8,4 +8,12 @@
     <QTDIR>D:\Qt\5.15.2\msvc2019_64</QTDIR>
     <LocalDebuggerEnvironment>PATH=$(QTDIR)\bin%3bD:\Qt\5.15.2\msvc2019_64\bin%3b$(PATH)</LocalDebuggerEnvironment>
   </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtTouchProperty>
+    </QtTouchProperty>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtTouchProperty>
+    </QtTouchProperty>
+  </PropertyGroup>
 </Project>
