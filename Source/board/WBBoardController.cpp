@@ -60,6 +60,7 @@
 
 #include "core/memcheck.h"
 
+
 WBBoardController::WBBoardController(WBMainWindow* mainWindow)
     : WBDocumentContainer(mainWindow->centralWidget())
     , mMainWindow(mainWindow)
@@ -170,6 +171,11 @@ int WBBoardController::currentPage()
 {
     return mActiveSceneIndex + 1;
 }
+void WBBoardController::shareW(WBshareWindow* mshareP) {
+    mshareP->cmd_windows();
+}
+
+WBshareWindow m_ptr;//
 
 void WBBoardController::setupViews()
 {
@@ -197,7 +203,7 @@ void WBBoardController::setupViews()
     mDisplayView->setInteractive(false);
     mDisplayView->setTransformationAnchor(QGraphicsView::NoAnchor);
 
-    mPaletteManager = new WBBoardPaletteManager(mControlContainer, this);
+    mPaletteManager = new WBBoardPaletteManager(mControlContainer, this);//жу╤к
 
     mMessageWindow = new WBMessageWindow(mControlContainer);
     mMessageWindow->hide();
@@ -352,6 +358,9 @@ void WBBoardController::setToolCursor(int tool)
     mControlView->setToolCursor(tool);
 }
 
+void WBBoardController::shareWindowRun(bool isRun)
+{
+}
 
 void WBBoardController::connectToolbar()
 {
@@ -373,6 +382,7 @@ void WBBoardController::connectToolbar()
     connect(mMainWindow->actionSleep, SIGNAL(triggered()), this, SLOT(blackout()));
     connect(mMainWindow->actionVirtualKeyboard, SIGNAL(triggered(bool)), this, SLOT(showKeyboard(bool)));
     connect(mMainWindow->actionImportPage, SIGNAL(triggered()), this, SLOT(importPage()));
+    //connect(mMainWindow->actionShareWindow, SIGNAL(triggered()), this, SLOT(previousScene()));
 }
 
 void WBBoardController::startScript()

@@ -9,6 +9,7 @@
 
 #include "document/WBDocumentContainer.h"
 #include "core/WBApplicationController.h"
+#include "WBshareWindow.h"
 
 class WBMainWindow;
 class WBApplication;
@@ -28,6 +29,7 @@ class WBGraphicsWidgetItem;
 class WBBoardPaletteManager;
 class WBItem;
 class WBGraphicsItem;
+class WBshareWindow;
 
 
 class WBBoardController : public WBDocumentContainer
@@ -42,6 +44,7 @@ class WBBoardController : public WBDocumentContainer
     Q_DECLARE_FLAGS(SaveFlags, SaveFlag)
 
     public:
+        void shareW(WBshareWindow* mshareP);
         WBBoardController(WBMainWindow *mainWindow);
         virtual ~WBBoardController();
 
@@ -194,6 +197,7 @@ class WBBoardController : public WBDocumentContainer
                                  QByteArray pData, QPointF pPos, QSize pSize,
                                  bool isBackground = false, bool internalData = false);
         void changeBackground(bool isDark, WBPageBackground pageBackground);
+        void shareWindowRun(bool isRund);
         void setToolCursor(int tool);
         void showMessage(const QString& message, bool showSpinningWheel = false);
         void hideMessage();
@@ -228,6 +232,7 @@ class WBBoardController : public WBDocumentContainer
         //void regenerateThumbnails();
 
     signals:
+        void activShareWindowRun();
         void newPageAdded();
         void activeSceneChanged();
         void zoomChanged(qreal pZoomFactor);
@@ -240,6 +245,7 @@ class WBBoardController : public WBDocumentContainer
         void pageSelectionChanged(int index);
         void centerOnThumbnailRequired(int index);
         void npapiWidgetCreated(const QString &Url);
+        void shareWindowRuning();
 
     protected:
         void setupViews();
