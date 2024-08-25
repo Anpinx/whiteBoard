@@ -5,7 +5,6 @@
 #include <QStyle>
 
 #include "board/WBBoardView.h"
-
 #include "core/memcheck.h"
 #include "core/WBApplication.h"
 #include "board/WBBoardController.h"

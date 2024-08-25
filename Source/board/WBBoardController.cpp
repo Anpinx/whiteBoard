@@ -1,4 +1,6 @@
 #include "WBBoardController.h"
+#include <cstdlib> 
+#include <QProcess>
 
 #include <QtWidgets>
 #include <QtWebEngineWidgets>
@@ -60,6 +62,11 @@
 
 #include "core/memcheck.h"
 
+//#include "WBshareWindow.h"
+
+//WBshareWindow _m_shareWindow;
+QString programPath = "C:\\D\\Project\\Qtr\\SynchronizedPlayer\\build\\Desktop_Qt_5_15_2_MSVC2019_64bit-Debug\\debug\\SynchronizedPlayer.exe";
+QProcess process;
 
 WBBoardController::WBBoardController(WBMainWindow* mainWindow)
     : WBDocumentContainer(mainWindow->centralWidget())
@@ -171,11 +178,9 @@ int WBBoardController::currentPage()
 {
     return mActiveSceneIndex + 1;
 }
-void WBBoardController::shareW(WBshareWindow* mshareP) {
-    mshareP->cmd_windows();
-}
+//void WBBoardController::shareW(WBshareWindow* mshareP) {mshareP->cmd_windows();}
 
-WBshareWindow m_ptr;//
+//WBshareWindow m_ptr;//
 
 void WBBoardController::setupViews()
 {
@@ -358,8 +363,13 @@ void WBBoardController::setToolCursor(int tool)
     mControlView->setToolCursor(tool);
 }
 
-void WBBoardController::shareWindowRun(bool isRun)
-{
+void WBBoardController::shareWindowRun(){
+    //const char* command = "C:\\D\\Project\\Qtr\\SynchronizedPlayer\\build\\Desktop_Qt_5_15_2_MSVC2019_64bit-Debug\\debug\\SynchronizedPlayer.exe";
+    //system(command);
+    //system("pause");
+    //QString programPath = "C:\\D\\Project\\Qtr\\SynchronizedPlayer\\build\\Desktop_Qt_5_15_2_MSVC2019_64bit-Debug\\debug\\SynchronizedPlayer.exe";
+    //QProcess process;
+    process.start(programPath);
 }
 
 void WBBoardController::connectToolbar()
@@ -374,6 +384,7 @@ void WBBoardController::connectToolbar()
     connect(mMainWindow->actionEraseBackground,SIGNAL(triggered()),this,SLOT(clearSceneBackground()));
 
     connect(mMainWindow->actionUndo, SIGNAL(triggered()), WBApplication::undoStack, SLOT(undo()));
+    connect(mMainWindow->actionShareWindow, SIGNAL(triggered()), this, SLOT(shareWindowRun()));////
     connect(mMainWindow->actionRedo, SIGNAL(triggered()), WBApplication::undoStack, SLOT(redo()));
     connect(mMainWindow->actionRedo, SIGNAL(triggered()), this, SLOT(startScript()));
     connect(mMainWindow->actionBack, SIGNAL( triggered()), this, SLOT(previousScene()));
