@@ -312,6 +312,7 @@
     <ClCompile Include="Source\web\WBWebKitUtils.cpp" />
     <ClCompile Include="Source\web\WBWebPage_.cpp" />
     <ClCompile Include="Source\web\WBWebPluginWidget.cpp" />
+    <ClCompile Include="WBshareWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Source\web\browser\downloaditem.ui" />
@@ -324,6 +325,7 @@
     <QtUic Include="UI\preferences.ui" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="WBshareWindow.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Source\core\WB.h" />
     <ClInclude Include="Source\core\WBForeignObjectsHandler.h" />

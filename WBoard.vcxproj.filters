@@ -147,6 +147,12 @@
     <Filter Include="Source Files\podcast\windowsmedia">
       <UniqueIdentifier>{e1583b76-c310-463f-9cce-2d53300bca4f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\remoteShare">
+      <UniqueIdentifier>{5f6c84e3-c708-4bfd-b35f-91370036b282}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\remoteShare">
+      <UniqueIdentifier>{1bb7f057-eee7-4092-9bb8-1bf14b699b16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\pdf\PDFRenderer.cpp">
@@ -694,6 +700,9 @@
     </ClCompile>
     <ClCompile Include="Source\web\browser\WBDownloadManager_.cpp">
       <Filter>Source Files\web\browser</Filter>
+    </ClCompile>
+    <ClCompile Include="WBshareWindow.cpp">
+      <Filter>Source Files\remoteShare</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1285,6 +1294,9 @@
     </ClInclude>
     <ClInclude Include="Source\web\WBWebKitUtils.h">
       <Filter>Header Files\web</Filter>
+    </ClInclude>
+    <ClInclude Include="WBshareWindow.h">
+      <Filter>Header Files\remoteShare</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

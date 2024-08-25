@@ -29,6 +29,7 @@ public:
     QAction *actionBack;
     QAction *actionForward;
     QAction *actionDocument;
+    QAction *actionShareWindow;
     QAction *actionWeb;
     QAction *actionLineSmall;
     QAction *actionLineMedium;
@@ -694,6 +695,12 @@ public:
         QIcon icon84;
         icon84.addFile(QString::fromUtf8(":/images/backgroundPalette/resetDefaultGridSize.svg"), QSize(), QIcon::Normal, QIcon::Off);
         actionDefaultGridSize->setIcon(icon84);
+        actionShareWindow = new QAction(MainWindow);
+        actionShareWindow->setObjectName(QString::fromUtf8("actionShareWindow"));
+        actionShareWindow->setCheckable(true);
+        QIcon icon85;
+        icon85.addFile(QString::fromUtf8(":/images/toolbar/shareWindow.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionShareWindow->setIcon(icon85);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         MainWindow->setCentralWidget(centralwidget);
@@ -736,6 +743,7 @@ public:
         boardToolBar->addSeparator();
         boardToolBar->addAction(actionErase);
         boardToolBar->addAction(actionBoard);
+        boardToolBar->addAction(actionShareWindow);
         boardToolBar->addAction(actionWeb);
         boardToolBar->addAction(actionDocument);
         boardToolBar->addAction(actionDesktop);
@@ -793,6 +801,10 @@ public:
         actionBackgrounds->setText(QCoreApplication::translate("MainWindow", "Backgrounds", nullptr));
 #if QT_CONFIG(tooltip)
         actionBackgrounds->setToolTip(QCoreApplication::translate("MainWindow", "Change Background", nullptr));
+#endif // QT_CONFIG(tooltip)
+        actionShareWindow->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
+#if QT_CONFIG(tooltip)
+        actionShareWindow->setToolTip(QCoreApplication::translate("MainWindow", "Runing", nullptr));
 #endif // QT_CONFIG(tooltip)
         actionUndo->setText(QCoreApplication::translate("MainWindow", "Undo", nullptr));
 #if QT_CONFIG(shortcut)

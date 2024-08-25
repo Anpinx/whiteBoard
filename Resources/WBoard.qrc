@@ -297,5 +297,6 @@
         <file>images/toolbar/captureScreen.png</file>
         <file>images/toolbar/captureScreenOn.png</file>
         <file>images/navig_arrow.png</file>
+        <file>images/toolbar/shareWindow.png</file>
     </qresource>
 </RCC>

@@ -248,7 +248,6 @@ int WBApplication::exec(const QString& pFileToImport)
     gs->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, true);
     gs->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, true);
 
-
     mainWindow = new WBMainWindow(0, Qt::FramelessWindowHint); 
     mainWindow->setAttribute(Qt::WA_NativeWindow, true);
 
@@ -277,7 +276,7 @@ int WBApplication::exec(const QString& pFileToImport)
     applicationController = new WBApplicationController(boardController->controlView(),
                                                         boardController->displayView(),
                                                         mainWindow,
-                                                        staticMemoryCleaner,
+                                                       staticMemoryCleaner,
                                                         boardController->paletteManager()->rightPalette());
 
 
