@@ -318,6 +318,7 @@ void WBApplicationController::showBoard()
 {
     mMainWindow->webToolBar->hide();
     mMainWindow->documentToolBar->hide();
+    //mMainWindow->windowShareBarToolBar->hide();
     mMainWindow->boardToolBar->show();
 
     if (mMainMode == Document)
@@ -390,8 +391,9 @@ void WBApplicationController::showInternet()
 void WBApplicationController::showDocument()
 {
     mMainWindow->webToolBar->hide();
-    mMainWindow->boardToolBar->hide();
     mMainWindow->documentToolBar->show();
+    //mMainWindow->windowShareBarToolBar->hide();
+    mMainWindow->boardToolBar->hide();
 
     mMainMode = Document;
 
@@ -419,6 +421,26 @@ void WBApplicationController::showDocument()
     mUninoteController->hideWindow();
 
     emit mainModeChanged(Document);
+}
+void WBApplicationController::showWindowShare() {
+    mMainWindow->webToolBar->hide();
+    mMainWindow->documentToolBar->hide();
+    //mMainWindow->windowShareBarToolBar->show();
+    mMainWindow->boardToolBar->hide();
+
+    mMainMode = WShare;
+
+    adaptToolBar();
+
+    mirroringEnabled(false);
+
+    mMainWindow->switchToDocumentsWidget();
+
+    mMainWindow->show();
+
+    mUninoteController->hideWindow();
+
+    emit mainModeChanged(WShare);
 }
 
 void WBApplicationController::showDesktop(bool dontSwitchFrontProcess)
@@ -495,7 +517,6 @@ void WBApplicationController::updateRequestFinished(QNetworkReply * reply)
         downloadJsonFinished(responseString);
     }
 }
-
 
 void WBApplicationController::downloadJsonFinished(QString currentJson)
 {

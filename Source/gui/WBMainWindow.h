@@ -28,6 +28,9 @@ public:
 	void addWebWidget(QWidget* pWidget);
 	void switchToWebWidget();
 
+	void addWShareWidget(QWidget* pWidget);
+	void switchToWShareWidget();
+
 	void addDocumentsWidget(QWidget* pWidget);
 	void switchToDocumentsWidget();
 
@@ -64,6 +67,7 @@ protected:
 	QWidget* mBoardWidget;  // 指向画板组件的指针
 	QWidget* mWebWidget;  // 指向网页组件的指针
 	QWidget* mDocumentsWidget;  // 指向文档组件的指针
+	QWidget* mWindowShareWidget;//指向共享桌面的指针
 
 private:
 #if defined(Q_OS_OSX)

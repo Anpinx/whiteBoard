@@ -21,6 +21,7 @@ WBMainWindow::WBMainWindow(QWidget* parent, Qt::WindowFlags flags)
     , mBoardWidget(0)  // 初始化指针为 0，表示没有设置组件
     , mWebWidget(0)    // 初始化指针为 0，表示没有设置组件
     , mDocumentsWidget(0)  // 初始化指针为 0，表示没有设置组件
+    , mWindowShareWidget(0)
     , mpDownloadWidget(NULL)  // 初始化下载组件指针为 NULL
 {
     Ui::MainWindow::setupUi(this);  // 设置 UI 界面
@@ -116,6 +117,15 @@ void WBMainWindow::switchToDocumentsWidget()
     if (mDocumentsWidget)
     {
         mStackedLayout->setCurrentWidget(mDocumentsWidget);  // 将当前显示的组件设置为文档组件
+    }
+}
+
+// 切换到共享窗口组件
+void WBMainWindow::switchToWShareWidget()
+{
+    if (mWindowShareWidget)
+    {
+        mStackedLayout->setCurrentWidget(mWindowShareWidget);  // 将当前显示的组件设置为文档组件
     }
 }
 

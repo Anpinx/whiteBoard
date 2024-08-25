@@ -21,6 +21,7 @@ class QtLocalPeer;
 #  define QT_QTSINGLEAPPLICATION_EXPORT
 #endif
 
+
 class QtSingleApplication : public QApplication
 {
     Q_OBJECT

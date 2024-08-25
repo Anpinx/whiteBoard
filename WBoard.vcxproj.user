@@ -3,6 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <QTDIR>D:\Qt\5.15.2\msvc2019_64</QTDIR>
     <LocalDebuggerEnvironment>PATH=$(QTDIR)\bin%3bD:\Qt\5.15.2\msvc2019_64\bin%3b$(PATH)</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <QTDIR>D:\Qt\5.15.2\msvc2019_64</QTDIR>

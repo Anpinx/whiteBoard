@@ -52,6 +52,8 @@ class WBApplicationController : public QObject
         void showBoard();
 
         void showInternet();
+        
+        void showWindowShare();
 
         void showDocument();
 
@@ -71,7 +73,7 @@ class WBApplicationController : public QObject
 
         enum MainMode
         {
-            Board = 0, Internet, Document, WebDocument
+            Board = 0, Internet, Document, WebDocument,WShare
         };
 
         MainMode displayMode()
